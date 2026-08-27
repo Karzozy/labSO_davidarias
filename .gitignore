@@ -1,0 +1,5 @@
+prog1
+prog2
+*.o
+docs/
+
