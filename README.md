@@ -172,5 +172,3 @@ sesión del usuario creado en la preparación y con el símbolo del sistema
 visible: la comprobación del punto 25, la primera ejecución del script y la
 segunda ejecución del punto 31. En una entrega en pareja, al menos una
 de las tres se toma desde la sesión de cada integrante.
-$ su - milogin
-$ whoami
