@@ -77,17 +77,17 @@ llegar al proceso 1. Anotar en la bitácora la cadena completa y qué
 programa corresponde al proceso 1.
 La orden pstree -p muestra esa misma jerarquía de una sola vez. No está
 instalada en todas las distribuciones; si no responde, la cadena obtenida a
-mano es suficiente.
+mano es suficiente.  
 9. Escribir un script llamado infoproc.sh que reciba un identificador de
 proceso como parámetro. Si no recibe ninguno, el script informa sobre el
-proceso que lo está ejecutando, cuyo identificador está en la variable $$.
+proceso que lo está ejecutando, cuyo identificador está en la variable $$.  
 10. Si el identificador recibido no corresponde a ningún proceso vivo, el script
 termina con un mensaje que lo indique y con un código de salida distinto
 de cero. La comprobación se hace sobre la existencia del subdirectorio en
-/proc, antes de intentar leer nada.
+/proc, antes de intentar leer nada.  
 11. Para el proceso consultado, el script informa el nombre, el estado, el
 identificador del padre y la cantidad de hilos. Los cuatro valores se leen
-del archivo status.
+del archivo status.  
 12. Cada línea de ese archivo trae la etiqueta, un separador y el valor:
 ```sh
 $ grep Threads /proc/self/status
