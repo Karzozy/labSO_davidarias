@@ -91,17 +91,86 @@ del archivo status.
 12. Cada línea de ese archivo trae la etiqueta, un separador y el valor:
 ```sh
 $ grep Threads /proc/self/status
-Threads: 1
-El valor se extrae de la línea con un operador de patrones del shell,
 ```
+Threads: 1  
+El valor se extrae de la línea con un operador de patrones del shell,
 aplicado sobre la variable que la contiene. No se admite resolverlo invo-
-cando otro programa.
+cando otro programa.  
 13. Ampliar el script para que, además del proceso consultado, recorra la
 cadena de padres con un ciclo hasta llegar al proceso 1, e imprima un
-renglón por cada proceso de la cadena.
+renglón por cada proceso de la cadena.  
 14. El script termina con código de salida cero cuando el recorrido se comple-
-ta.
-
-```del sistema muestra su nombre:
+ta.  
+15. Escribir un programa en C llamado infoproc.c que produzca la misma
+información del punto 11 sobre el proceso cuyo identificador reciba como
+argumento. Si no recibe argumento, informa sobre sí mismo.  
+16. El archivo se abre con open, se lee con read y se cierra con close. No
+se admite el uso de fopen, fgets ni ninguna otra función de la biblioteca
+de entrada y salida con formato. La restricción es sobre la lectura del
+archivo, no sobre el análisis del texto ya leído: las funciones de manejo de
+cadenas de string.h sí se pueden usar.  
+17. La salida se escribe con printf o con write sobre STDOUT_FILENO: las
+dos formas son admisibles. La restricción del punto anterior es sobre la
+lectura del archivo, no sobre la salida ni sobre el formateo de cadenas en
+memoria, de modo que snprintf también se puede usar.  
+18. Verificar el valor de retorno de cada llamada al sistema. Si una falla,
+informar la causa con perror y terminar con un código de error.  
+19. Informar también el identificador del propio programa y el de su proceso
+padre, obtenidos con getpid y getppid. Ejecutar el programa desde el
+shell y comprobar a qué proceso corresponde el padre.  
+20. El programa debe compilar sin advertencias:
+```sh
+$ gcc -Wall -o infoproc infoproc.c
+```
+Junto al enunciado se publica un Makefile que automatiza esa orden
+y agrega un objetivo clean que borra lo generado. Con él, construir y
+limpiar son:
+```sh
+$ make
+$ make clean
+```
+El Makefile forma parte de lo que se entrega. Las órdenes de sus reglas
+van precedidas de un tabulador, que se pierde al copiar el texto desde este
+documento: se usa el archivo publicado.  
+21. Ejecutar el script y el programa sobre el mismo identificador de proceso y
+comprobar que la información coincide.  
+22. Explicar en la bitácora de dónde sale la información en cada caso, y por
+qué dos programas tan distintos entregan el mismo resultado.  
+23. Ejecutar el script y el programa sobre el identificador de un proceso
+que esté cambiando de estado, como el navegador o un compilador en
+ejecución, y observar si el informe es idéntico. Explicar en la bitácora el
+resultado.  
+24. El shell también es un programa. Explicar en la bitácora qué hace el shell,
+en términos de servicios del sistema operativo, desde que se escribe una
+línea de comandos hasta que aparece de nuevo el símbolo de espera.  
+25. Instalar la herramienta de conversión y comprobar que responde:
+```sh
+$ sudo apt install ffmpeg
+$ ffmpeg -version
+```
+26. Generar los archivos de prueba con la misma herramienta, en lugar de
+descargar material. Cada archivo dura tres segundos y ocupa muy poco:
+```sh
+$ ffmpeg -f lavfi -i testsrc=duration=3:size=320x240 clase1.mkv
+```
+Generar al menos cuatro archivos, uno de ellos con varios puntos en el
+nombre, como clase.2026.mkv.  
+27. Escribir un script llamado convertir.sh que tome todos los archivos con
+extensión .mkv del directorio actual y genere para cada uno el archivo
+.mp4 correspondiente, conservando el nombre. El cambio de extensión
+se resuelve con un operador de patrones, no invocando otro programa.  
+28. Hacer que el script no vuelva a convertir un archivo cuyo .mp4 ya exista,
+e informe de que lo está saltando.  
+29. Aceptar como parámetro opcional el directorio donde buscar. Si no se
+recibe, usar el directorio actual. Si la ruta recibida no existe o no es un
+directorio, terminar con un mensaje claro y sin convertir nada.  
+30. Informar al final cuántos archivos se convirtieron y cuántos se saltaron.  
+31. Ejecutar el script dos veces seguidas sobre el mismo directorio. La segunda
+ejecución no debe convertir nada ni producir ningún error.  
+32. Registrar como evidencia tres capturas de pantalla, tomadas desde la
+sesión del usuario creado en la preparación y con el símbolo del sistema
+visible: la comprobación del punto 25, la primera ejecución del script y la
+segunda ejecución del punto 31. En una entrega en pareja, al menos una
+de las tres se toma desde la sesión de cada integrante.
 $ su - milogin
 $ whoami
