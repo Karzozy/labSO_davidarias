@@ -68,9 +68,9 @@ $ wc -c < /proc/self/status
 ```
 Las dos respuestas no coinciden. Explicar en la bitácora a qué se debe,
 teniendo en cuenta que stat consulta los atributos del archivo y wc lee
-su contenido.
+su contenido.  
 7. Terminar el proceso lanzado en el punto 5 con kill y comprobar que su
-subdirectorio de /proc deja de existir.
+subdirectorio de /proc deja de existir.  
 8. Recorrer la cadena de padres a mano: partiendo del shell, consultar el
 campo PPid, consultar después el estado de ese padre, y repetir hasta
 llegar al proceso 1. Anotar en la bitácora la cadena completa y qué
