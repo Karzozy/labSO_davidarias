@@ -1,11 +1,11 @@
-# Taller - llamadas al sistema
+# Laboratorio de Sistemas Operativos  
 
 ## Integrantes
 
 - David Santiago Arias Narvaez <davidarias@unicauca.edu.co>
 
 ## Planteamiento del problema
-
+# Taller 1 - llamadas al sistema
 Enunciado
 1. Escribir un programa en C que:
 obtenga su identificador de proceso y el de su proceso padre;
