@@ -1,5 +1,7 @@
 prog1
 prog2
+procesosfork
+planificador
 *.o
 docs/
 
