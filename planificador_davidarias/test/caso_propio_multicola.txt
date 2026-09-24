@@ -1,0 +1,14 @@
+define queues 3
+define scheduling 1 srt
+define scheduling 2 rr
+define scheduling 3 fifo
+define quantum 1 5
+define quantum 2 3
+define quantum 3 10
+process S1 0 6 1
+process S2 2 2 1
+process R1 0 5 2
+process R2 1 4 2
+process F1 0 3 3
+process F2 1 1 3
+start
