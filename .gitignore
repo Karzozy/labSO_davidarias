@@ -2,6 +2,7 @@ prog1
 prog2
 procesosfork
 planificador
+infoproc
 *.o
 docs/
 
