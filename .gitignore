@@ -3,6 +3,8 @@ prog2
 procesosfork
 planificador
 infoproc
+servidor_tablero
+cliente_tablero
 *.o
 docs/
 
