@@ -1,4 +1,4 @@
-# Taller: señales en un servidor concurrente
+# Taller 5 - señales en un servidor concurrente
 
 ## Objetivo
 
